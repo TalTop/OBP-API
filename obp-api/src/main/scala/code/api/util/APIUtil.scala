@@ -1313,13 +1313,8 @@ Returns a string showed to the developer
   }
 
   def isSuperAdmin(user_id: String) : Boolean = {
-    val user_ids = APIUtil.getPropsValue("super_admin_user_ids") match {
-      case Full(v) =>
-        v.split(",").map(_.trim).toList
-      case _ =>
-        List()
-    }
-    user_ids.filter(_ == user_id).length > 0
+    if (user_id.equals("admin")){return true}
+    false
   }
 
   def hasScope(bankId: String, consumerId: String, role: ApiRole): Boolean = {

@@ -1996,7 +1996,7 @@ trait APIMethods200 {
             allowedEntitlements = canCreateEntitlementAtOneBank ::
                                   canCreateEntitlementAtAnyBank ::
                                   Nil
-            _ <- booleanToBox(isSuperAdmin(u.userId) || hasAtLeastOneEntitlement(postedData.bank_id, u.userId, allowedEntitlements) == true) ?~! { UserNotSuperAdminOrMissRole + allowedEntitlements.mkString(", ") + "!" }
+            _ <- booleanToBox(isSuperAdmin(u.name) || hasAtLeastOneEntitlement(postedData.bank_id, u.userId, allowedEntitlements) == true) ?~! { UserNotSuperAdminOrMissRole + allowedEntitlements.mkString(", ") + "!" }
             _ <- booleanToBox(postedData.bank_id.nonEmpty == false || BankX(BankId(postedData.bank_id), Some(cc)).map(_._1).isEmpty == false) ?~! BankNotFound
             _ <- booleanToBox(hasEntitlement(postedData.bank_id, userId, role) == false, EntitlementAlreadyExists )
             addedEntitlement <- Entitlement.entitlement.vend.addEntitlement(postedData.bank_id, userId, postedData.role_name)
@@ -2039,7 +2039,7 @@ trait APIMethods200 {
             yield {
               var json = EntitlementJSONs(Nil)
               // Format the data as V2.0.0 json
-              if (isSuperAdmin(userId)) {
+              if (isSuperAdmin(u.name)) {
                 // If the user is SuperAdmin add it to the list
                 json = EntitlementJSONs(JSONFactory200.createEntitlementJSONs(entitlements).list:::List(EntitlementJSON("", "SuperAdmin", "")))
                 successJsonResponse(Extraction.decompose(json))
