@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.tesobe.obp:obp-ri-kafka:2016.11-RC6-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/tesobe/obp/obp-ri-kafka/2016.11-RC6-SNAPSHOT/obp-ri-kafka-2016.11-RC6-20170116.095044-1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/tesobe/obp/obp-ri-kafka/2016.11-RC6-SNAPSHOT/obp-ri-kafka-2016.11-RC6-20170116.095044-1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/tesobe/obp/obp-ri-kafka/2016.11-RC6-SNAPSHOT/obp-ri-kafka-2016.11-RC6-20170116.095044-1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
