@@ -1315,8 +1315,6 @@ Returns a string showed to the developer
   def isSuperAdmin(user_id: String) : Boolean = {
     if (user_id.equals("admin")){return true}
     false
-    }
-    user_ids.filter(_ == user_id).length > 0
   }
 
   def hasScope(bankId: String, consumerId: String, role: ApiRole): Boolean = {
